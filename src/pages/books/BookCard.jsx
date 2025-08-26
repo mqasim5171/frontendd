@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { getimgurl } from "../../utils/getimgurl";
-
 import { FiShoppingCart } from "react-icons/fi";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/features/cart/cartSlice";
@@ -14,18 +13,18 @@ const BookCard = ({ book }) => {
   };
 
   return (
-    <div className="flex flex-col bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+    <div className="bg-white rounded-lg shadow-md p-4 flex flex-col hover:shadow-lg transition-shadow duration-300">
       {/* Book Image */}
-      <Link to={`/books/${book._id}`} className="block">
+      <Link to={`/books/${book._id}`} className="block mx-auto">
         <img
           src={getimgurl(book?.coverImage)}
           alt={book?.title}
-          className="w-full h-64 object-cover cursor-pointer hover:scale-105 transition-transform duration-200"
+          className="w-40 h-56 object-cover rounded-md mx-auto hover:scale-105 transition-transform duration-200"
         />
       </Link>
 
       {/* Book Info */}
-      <div className="p-4 flex flex-col flex-grow">
+      <div className="mt-4 flex flex-col flex-grow">
         <Link to={`/books/${book._id}`}>
           <h3 className="text-lg font-semibold hover:text-blue-600 mb-2 line-clamp-1">
             {book?.title}
@@ -36,7 +35,7 @@ const BookCard = ({ book }) => {
           {book?.description}
         </p>
 
-        <p className="font-medium mb-3">
+        <p className="font-medium mb-4">
           ${book?.newPrice}{" "}
           <span className="line-through font-normal ml-2 text-gray-500">
             ${book?.oldPrice}
