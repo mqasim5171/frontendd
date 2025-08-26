@@ -6,7 +6,7 @@ import Login from "../components/Login";
 import {createBrowserRouter}from "react-router-dom";
 import CheckoutPage from "../pages/books/CheckoutPage";
 import SingleBook from "../pages/books/SingleBook";
-
+import AllProducts from "../pages/books/AllProducts";
 
 
 const router = createBrowserRouter([
@@ -46,6 +46,7 @@ const router = createBrowserRouter([
                 path: "/books/:id",
                 element: <SingleBook/>
             },
+            { path: "/all-products", element: <AllProducts /> }, 
         ]
     },
 ]);
